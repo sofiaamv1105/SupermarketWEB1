@@ -1,7 +1,12 @@
-﻿ namespace SupermarketWEB.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SupermarketWEB.Models
 {
-    public class Provider
+    [Table("Providers")]
+    public class Providers
     {
+        [Key]
         public int ProviderID { get; set; }
         public string name { get; set; }
         public string ContactName { get; set; }

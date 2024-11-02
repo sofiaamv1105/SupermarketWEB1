@@ -1,0 +1,38 @@
+﻿@page
+@model SupermarketWEB.Pages.Provider.IndexModel
+@{
+    ViewData["Title"] = "Provider List";
+}
+
+<h1>Provider List</h1>
+
+<a asp-page="Create" class="btn btn-primary">Create New</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ProviderID</th>
+            <th>Name</th>
+            <th>Contact Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var providers in Model.Provider)
+        {
+            <tr>
+                <td>@providers.ProviderID</td>
+                <td>@providers.name</td>
+                <td>@providers.ContactName</td>
+                <td>@providers.Phone</td>
+                <td>@providers.Email</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@providers.ProviderID" class="btn btn-warning">Edit</a>
+                    <a asp-page="Delete" asp-route-id="@providers.ProviderID" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
