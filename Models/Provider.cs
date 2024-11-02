@@ -7,6 +7,7 @@ namespace SupermarketWEB.Models
     public class Providers
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProviderID { get; set; }
         public string name { get; set; }
         public string ContactName { get; set; }
