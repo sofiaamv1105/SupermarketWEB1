@@ -5,14 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SupermarketWEB</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SupermarketWEB.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #3f78aa; /* Color de fondo neutro */
+            color: #333; /* Texto oscuro para mejor legibilidad */
+        }
+
+        header {
+            background-color: #3f78aa; /* Color de fondo del navbar */
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff; /* Color de texto en el navbar */
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #d3d3d3; /* Color de texto al pasar el mouse */
+            }
+
+        .hero {
+            background-image: url('ruta/a/tu/imagen.jpg'); /* Banner superior */
+            background-size: cover;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+        .footer {
+            background-color: #343a40; /* Color de fondo del footer */
+            color: #ffffff; /* Color de texto del footer */
+        }
+
+            .footer a {
+                color: #d3d3d3; /* Color de enlace en el footer */
+            }
+
+                .footer a:hover {
+                    color: #ffffff; /* Color de enlace al pasar el mouse */
+                }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">SupermarketWEB</a>
+                <a class="navbar-brand text-white" asp-area="" asp-page="/Index">SupermarketWEB</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,28 +68,33 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Categories/Index">Categories</a>
+                            <a class="nav-link" asp-area="" asp-page="/Categories/Index">Categories</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Products/Index">Products</a>
+                            <a class="nav-link" asp-area="" asp-page="/Products/Index">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/PayMode/Index">PayMode</a>
+                            <a class="nav-link" asp-area="" asp-page="/PayMode/Index">PayMode</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Provider/Index">Provider</a>
+                            <a class="nav-link" asp-area="" asp-page="/Provider/Index">Provider</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+    <div class="hero">
+        <h1>Bienvenido a SupermarketWEB</h1>
+    </div>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
