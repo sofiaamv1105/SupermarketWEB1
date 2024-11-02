@@ -21,18 +21,18 @@ namespace SupermarketWEB.Pages.Products
         }
         public class InputModel
         {
-            [Required(ErrorMessage = "El nombre es obligatorio.")]
+            [Required(ErrorMessage = "Name is mandatory.")]
             public string Name { get; set; }
 
-            [Required(ErrorMessage = "El precio es obligatorio.")]
+            [Required(ErrorMessage = "Price is mandatory.")]
             [Range(0, int.MaxValue, ErrorMessage = "El precio debe ser un número positivo.")]
             public int Price { get; set; }
 
-            [Required(ErrorMessage = "El stock es obligatorio.")]
+            [Required(ErrorMessage = "Stock is mandatory.")]
             [Range(0, int.MaxValue, ErrorMessage = "El stock debe ser un número positivo.")]
             public int Stock { get; set; }
 
-            [Required(ErrorMessage = "La categoría es obligatoria")]
+            [Required(ErrorMessage = "Category is mandatory")]
             [Range(1, int.MaxValue, ErrorMessage = "Debe seleccionar una categoría válida.")]
             public int CategoryId { get; set; }
         }
@@ -51,7 +51,7 @@ namespace SupermarketWEB.Pages.Products
 
             if (!Categories.Any())
             {
-                ModelState.AddModelError("", "No hay categorías disponibles. Debe crear al menos una categoría primero.");
+                ModelState.AddModelError("", "Enter at least one category");
             }
         }
 
@@ -79,7 +79,7 @@ namespace SupermarketWEB.Pages.Products
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
 
-            TempData["SuccessMessage"] = "Producto creado exitosamente.";
+            TempData["SuccessMessage"] = "Product created.";
             return RedirectToPage("./Index");
         }
     }
