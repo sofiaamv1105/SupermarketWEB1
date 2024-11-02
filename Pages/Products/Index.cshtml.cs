@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SupermarketWEB.Data;
@@ -16,7 +17,7 @@ namespace SupermarketWEB.Pages.Products
             _context = context;
         }
 
-        public IList<Product> Products { get; set; }
+        public IList<Product> Products { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
