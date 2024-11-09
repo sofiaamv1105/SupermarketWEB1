@@ -6,11 +6,13 @@ using SupermarketWEB.Data;
 using SupermarketWEB.Models;
 using System.Data.SqlClient;
 using SupermarketWEB.Pages;
+using Microsoft.AspNetCore.Authorization;
 
 
 
 namespace SupermarketWEB.Pages.PayMode
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly SupermarketContext _context;
